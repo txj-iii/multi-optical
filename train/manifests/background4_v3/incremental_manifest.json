@@ -1,0 +1,151 @@
+{
+  "version_id": "background4_v3",
+  "patch_root": "D:\\multi-optical\\train\\five_band_patches\\background4_v3",
+  "scene_ids": [
+    "SAMPLE_097",
+    "SAMPLE_098",
+    "SAMPLE_099",
+    "SAMPLE_100",
+    "SAMPLE_101",
+    "SAMPLE_102",
+    "SAMPLE_103",
+    "SAMPLE_104",
+    "SAMPLE_105",
+    "SAMPLE_106",
+    "SAMPLE_107",
+    "SAMPLE_108",
+    "SAMPLE_109",
+    "SAMPLE_110",
+    "SAMPLE_111",
+    "SAMPLE_112",
+    "SAMPLE_113",
+    "SAMPLE_114",
+    "SAMPLE_115",
+    "SAMPLE_116"
+  ],
+  "scene_count": 20,
+  "patch_count": 738,
+  "approval_basis": "user_confirmed_auto_transfer_2026-07-23",
+  "preflight": {
+    "SAMPLE_097": {
+      "paint": 448930,
+      "pollution": 0,
+      "aging": 152794,
+      "pigment": 448930
+    },
+    "SAMPLE_098": {
+      "paint": 440817,
+      "pollution": 0,
+      "aging": 125163,
+      "pigment": 440817
+    },
+    "SAMPLE_099": {
+      "paint": 399499,
+      "pollution": 0,
+      "aging": 135093,
+      "pigment": 399499
+    },
+    "SAMPLE_100": {
+      "paint": 0,
+      "pollution": 129802,
+      "aging": 0,
+      "pigment": 0
+    },
+    "SAMPLE_101": {
+      "paint": 0,
+      "pollution": 129802,
+      "aging": 0,
+      "pigment": 0
+    },
+    "SAMPLE_102": {
+      "paint": 0,
+      "pollution": 129802,
+      "aging": 0,
+      "pigment": 0
+    },
+    "SAMPLE_103": {
+      "paint": 540822,
+      "pollution": 213530,
+      "aging": 55168,
+      "pigment": 524964
+    },
+    "SAMPLE_104": {
+      "paint": 540822,
+      "pollution": 213530,
+      "aging": 55168,
+      "pigment": 524964
+    },
+    "SAMPLE_105": {
+      "paint": 589476,
+      "pollution": 0,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_106": {
+      "paint": 589476,
+      "pollution": 0,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_107": {
+      "paint": 589476,
+      "pollution": 0,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_108": {
+      "paint": 589476,
+      "pollution": 0,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_109": {
+      "paint": 589476,
+      "pollution": 0,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_110": {
+      "paint": 589476,
+      "pollution": 0,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_111": {
+      "paint": 589476,
+      "pollution": 0,
+      "aging": 55366,
+      "pigment": 589476
+    },
+    "SAMPLE_112": {
+      "paint": 589476,
+      "pollution": 0,
+      "aging": 55366,
+      "pigment": 589476
+    },
+    "SAMPLE_113": {
+      "paint": 589476,
+      "pollution": 74142,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_114": {
+      "paint": 589476,
+      "pollution": 74142,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_115": {
+      "paint": 589476,
+      "pollution": 153761,
+      "aging": 0,
+      "pigment": 589476
+    },
+    "SAMPLE_116": {
+      "paint": 589476,
+      "pollution": 153761,
+      "aging": 0,
+      "pigment": 589476
+    }
+  }
+}

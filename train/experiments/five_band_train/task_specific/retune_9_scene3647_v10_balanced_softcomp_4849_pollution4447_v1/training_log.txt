@@ -1,0 +1,74 @@
+model_variant=task_specific
+loss_weighting=dwa
+dwa_temperature=2.0
+patch_root=D:\multi-optical\train\five_band_patches\train_light_v10_balanced_4849_pollution4447
+sample_count=262
+mode=five_band_patch_train
+in_channels=15
+required_positive_heads=paint,pollution,aging
+include_empty_scene_ids=SAMPLE_015,SAMPLE_020,SAMPLE_021,SAMPLE_034,SAMPLE_036,SAMPLE_037,SAMPLE_038,SAMPLE_039
+sampling_strategy=balanced
+competition_weight=0.25
+pollution_positive_weight=1.6
+aging_positive_weight=2.5
+overlap_penalty_weight=0.03
+spectral_loss_weight=0.05
+use_spectral_se=True
+device=cuda
+python_executable=C:\Users\Embar\.conda\envs\pipe2\python.exe
+resume_checkpoint_path=D:\multi-optical\train\experiments\five_band_train\task_specific\retune_9_scene3647_agingmix_4849_v1\vnir_multitask_bootstrap_latest.pt
+sample_record_path=D:\multi-optical\readme\样本记录规范.md
+pigment_class_names=无颜料,石绿,石青,朱砂,代赭,石青+朱砂,石青+代赭+朱砂
+pigment_loss_weight=0.5
+epoch=1 loss=0.487328
+epoch=1 paint_loss=0.527786
+epoch=1 pollution_loss=0.556044
+epoch=1 aging_loss=0.521660
+epoch=1 pigment_loss=0.154121
+epoch=1 paint_pollution_competition_loss=0.239605
+epoch=1 paint_pollution_overlap_loss=0.005456
+epoch=1 spectral_guidance_loss=0.132498
+epoch=1 aging_paint_edge_loss=0.000000
+epoch=1 paint_weight=1.000000
+epoch=1 pollution_weight=1.000000
+epoch=1 aging_weight=1.000000
+epoch=1 pigment_weight=0.500000
+epoch=2 loss=0.430762
+epoch=2 paint_loss=0.518703
+epoch=2 pollution_loss=0.516405
+epoch=2 aging_loss=0.506739
+epoch=2 pigment_loss=0.074227
+epoch=2 paint_pollution_competition_loss=0.120362
+epoch=2 paint_pollution_overlap_loss=0.003873
+epoch=2 spectral_guidance_loss=0.116293
+epoch=2 aging_paint_edge_loss=0.000000
+epoch=2 paint_weight=1.000000
+epoch=2 pollution_weight=1.000000
+epoch=2 aging_weight=1.000000
+epoch=2 pigment_weight=0.500000
+epoch=3 loss=0.464062
+epoch=3 paint_loss=0.501044
+epoch=3 pollution_loss=0.524720
+epoch=3 aging_loss=0.506213
+epoch=3 pigment_loss=0.094960
+epoch=3 paint_pollution_competition_loss=0.175617
+epoch=3 paint_pollution_overlap_loss=0.004245
+epoch=3 spectral_guidance_loss=0.114076
+epoch=3 aging_paint_edge_loss=0.000000
+epoch=3 paint_weight=1.067809
+epoch=3 pollution_weight=1.039324
+epoch=3 aging_weight=1.061744
+epoch=3 pigment_weight=0.415561
+epoch=4 loss=0.445153
+epoch=4 paint_loss=0.527546
+epoch=4 pollution_loss=0.520242
+epoch=4 aging_loss=0.490178
+epoch=4 pigment_loss=0.081076
+epoch=4 paint_pollution_competition_loss=0.230366
+epoch=4 paint_pollution_overlap_loss=0.008637
+epoch=4 spectral_guidance_loss=0.116056
+epoch=4 aging_paint_edge_loss=0.000000
+epoch=4 paint_weight=0.949745
+epoch=4 pollution_weight=0.973859
+epoch=4 aging_weight=0.965549
+epoch=4 pigment_weight=0.555423

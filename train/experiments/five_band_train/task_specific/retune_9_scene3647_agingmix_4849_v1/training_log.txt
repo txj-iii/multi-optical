@@ -1,0 +1,34 @@
+model_variant=task_specific
+loss_weighting=dwa
+dwa_temperature=2.0
+patch_root=D:\multi-optical\train\five_band_patches\train_light_v10_scene3647_agingmix_4849
+sample_count=164
+mode=five_band_patch_train
+in_channels=15
+required_positive_heads=paint,aging
+include_empty_scene_ids=SAMPLE_015,SAMPLE_020,SAMPLE_021,SAMPLE_034
+sampling_strategy=balanced
+competition_weight=0.7
+pollution_positive_weight=2.0
+aging_positive_weight=2.5
+overlap_penalty_weight=0.12
+spectral_loss_weight=0.05
+use_spectral_se=True
+device=cuda
+python_executable=C:\Users\Embar\.conda\envs\pipe2\python.exe
+resume_checkpoint_path=D:\multi-optical\train\experiments\five_band_train\task_specific\retune_9_scene3647_pollutionshape_v2_agingfix_v1\aging_only_finetune_latest.pt
+sample_record_path=D:\multi-optical\readme\样本记录规范.md
+pigment_class_names=无颜料,石绿,石青,朱砂,代赭,石青+朱砂,石青+代赭+朱砂
+pigment_loss_weight=0.5
+epoch=1 loss=0.640068
+epoch=1 paint_loss=0.506729
+epoch=1 pollution_loss=0.603040
+epoch=1 aging_loss=0.534451
+epoch=1 pigment_loss=0.254552
+epoch=1 paint_pollution_competition_loss=0.271954
+epoch=1 paint_pollution_overlap_loss=0.004759
+epoch=1 spectral_guidance_loss=0.125098
+epoch=1 paint_weight=1.000000
+epoch=1 pollution_weight=1.000000
+epoch=1 aging_weight=1.000000
+epoch=1 pigment_weight=0.500000

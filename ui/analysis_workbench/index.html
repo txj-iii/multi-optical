@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>多光谱分析工作台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sample-panel">
+        <div class="panel-title">
+          <span>样本</span>
+          <div class="panel-actions">
+            <button id="importLatestButton" class="action-button" type="button">导入最新</button>
+            <button id="importBackground4Button" class="action-button" type="button">导入四背景母本</button>
+            <button id="reloadButton" class="icon-button" title="重新加载" type="button">&#x21bb;</button>
+          </div>
+        </div>
+        <div id="sampleList" class="sample-list"></div>
+      </aside>
+
+      <section class="viewer-panel">
+        <div class="viewer-toolbar">
+          <div class="segmented" id="sourceControls">
+            <button type="button" data-source="annotation">标注结果</button>
+            <button type="button" data-source="review" class="active">预测结果</button>
+          </div>
+          <div class="segmented" id="layerControls">
+            <button type="button" data-layer="preview">原图</button>
+            <button type="button" data-layer="combined" class="active">全部</button>
+            <button type="button" data-layer="paint">paint</button>
+            <button type="button" data-layer="pollution">pollution</button>
+            <button type="button" data-layer="aging">aging</button>
+          </div>
+          <label class="opacity-control">
+            <span>透明度</span>
+            <input id="opacityInput" type="range" min="0.25" max="1" step="0.05" value="1" />
+          </label>
+        </div>
+        <div id="imageStage" class="image-stage">
+          <img id="previewImage" alt="preview" />
+          <img id="overlayImage" alt="overlay" />
+          <canvas id="editorCanvas" class="editor-canvas hidden" aria-label="annotation editor"></canvas>
+        </div>
+      </section>
+
+      <aside class="review-panel">
+        <section class="version-panel">
+          <div class="panel-title">结果版本</div>
+          <div class="version-controls">
+            <select id="versionSelect" class="version-select" aria-label="version"></select>
+            <span id="versionBadge" class="tag muted">-</span>
+          </div>
+          <div class="background4-version-controls">
+            <label for="background4VersionSelect">background4 推理版本</label>
+            <select id="background4VersionSelect" class="version-select" aria-label="background4 inference version">
+              <option value="background4_v2" selected>background4_v2（默认）</option>
+              <option value="background4_v3">background4_v3（10 epoch）</option>
+              <option value="background4_v3_agingfix_v1_best">v3 agingfix（最佳第 4 轮）</option>
+            </select>
+          </div>
+          <div id="versionSummary" class="version-summary"></div>
+          <dl id="versionProvenance" class="provenance-list"></dl>
+        </section>
+
+        <div class="panel-title">工作流</div>
+        <section class="workflow-panel">
+          <div id="backgroundPanel" class="adjustment-panel">
+            <div class="panel-title small">背景板确认（导入后先选背景）</div>
+            <div id="backgroundControls" class="segmented compact">
+              <button type="button" data-background="代赭">代赭</button>
+              <button type="button" data-background="石青">石青</button>
+              <button type="button" data-background="石绿">石绿</button>
+              <button type="button" data-background="朱砂">朱砂</button>
+            </div>
+            <div class="segmented compact" id="lightControls">
+              <button type="button" data-light="1">光照 1</button>
+              <button type="button" data-light="5">光照 5</button>
+              <button type="button" data-light="10">光照 10</button>
+            </div>
+            <button id="confirmBackgroundButton" class="action-button action-button-full" type="button">确认背景并开始预测</button>
+          </div>
+          <div class="workflow-question">当前结果如何处理？</div>
+          <div id="annotationMeta" class="workflow-meta">标注来源未加载</div>
+          <div class="review-actions review-actions-two">
+            <button id="approveButton" type="button">采用标注</button>
+            <button id="rejectButton" type="button">暂不采用</button>
+          </div>
+          <div class="adjustment-panel">
+            <div class="panel-title small">人工修订</div>
+            <button id="editButton" class="action-button action-button-full" type="button">进入人工修改</button>
+            <button id="runReviewSeedButton" class="action-button action-button-full" type="button">运行 softcomp 起标</button>
+            <button id="runBackground4PredictButton" class="action-button action-button-full" type="button">运行 background4_v2 预测</button>
+          </div>
+          <div id="editorPanel" class="editor-panel hidden">
+            <div class="panel-title small">标注编辑器</div>
+            <div class="segmented compact" id="editorHeadControls">
+              <button type="button" data-head="paint" class="active">paint</button>
+              <button type="button" data-head="pollution">pollution</button>
+              <button type="button" data-head="aging">aging</button>
+            </div>
+            <div class="segmented compact" id="pigmentControls">
+              <button type="button" data-pigment="1">朱砂</button>
+              <button type="button" data-pigment="2">代赭</button>
+              <button type="button" data-pigment="3">石青</button>
+              <button type="button" data-pigment="4">石绿</button>
+            </div>
+            <div class="segmented compact" id="editorModeControls">
+              <button type="button" data-mode="add" class="active">新增</button>
+              <button type="button" data-mode="erase">擦除</button>
+            </div>
+            <label class="opacity-control editor-brush-control">
+              <span>笔刷</span>
+              <input id="editorBrushInput" type="range" min="6" max="80" step="2" value="24" />
+              <span id="editorBrushValue">24 px</span>
+            </label>
+            <div class="review-actions review-actions-two">
+              <button id="saveAnnotationButton" type="button">保存最终标注</button>
+              <button id="discardAnnotationButton" type="button">放弃修改</button>
+            </div>
+          </div>
+          <div id="reviewStatus" class="review-status">等待审核</div>
+          <div id="workflowMeta" class="workflow-meta">当前流程：未加载</div>
+        </section>
+
+        <section id="auditPanel" class="audit-panel hidden">
+          <div class="panel-title">标注审查</div>
+          <div id="auditSummary" class="workflow-meta">尚未生成审查候选</div>
+          <div id="auditEntries" class="audit-entries"></div>
+        </section>
+
+        <div class="panel-title">三头概览</div>
+        <div id="headCards" class="head-cards"></div>
+      </aside>
+
+      <section class="curve-panel">
+        <div class="curve-toolbar">
+          <div class="panel-title">当前样本信息</div>
+          <span id="sampleMeta" class="tag muted">-</span>
+        </div>
+        <div id="curveLegend" class="curve-legend"></div>
+        <div id="curvePanelBody" class="curve-panel-body">
+          <div id="curvePlaceholder" style="padding: 12px 0; color: #5e6b78; line-height: 1.6;">
+            当前界面用于：导入最新 5 波段、查看预测结果、人工修订最终标注，并决定采用或暂不采用。
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./hover_helpers.js?v=20260723-background4-version-display"></script>
+    <script src="./workflow_actions.js?v=20260626-workflow4"></script>
+    <script src="./audit_helpers.js?v=20260624-audit1"></script>
+    <script src="./curve_helpers.js?v=20260626-curves2"></script>
+    <script src="./app.js?v=20260723-background4-agingfix-display"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+# ---------------------------------------------------------------------------
+# Python / test caches
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------------------
+# Local environments and editor state
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+.idea/
+.vscode/
+.claude/
+.agents/
+.git_legacy_backup_*/
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Local datasets and generated training data
+# ---------------------------------------------------------------------------
+train/camera_eval_workspace/
+train/six_band_annotation_workspace/
+train/six_band_patches/
+train/five_band_patches/
+train/five_band_patches/**
+train/previews/
+
+# The small immutable manifests are copied to train/manifests/ before commit.
+# Do not commit patch arrays or mask tiles from five_band_patches.
+*.npy
+*.npz
+
+# ---------------------------------------------------------------------------
+# Generated predictions, UI overlays and runtime state
+# ---------------------------------------------------------------------------
+train/experiments/**
+
+# Keep all six official checkpoint directories. Their .pt files are managed by
+# Git LFS through .gitattributes.
+!train/experiments/five_band_train/
+!train/experiments/five_band_train/task_specific/
+!train/experiments/five_band_train/task_specific/background4_v2/
+!train/experiments/five_band_train/task_specific/background4_v2/**
+!train/experiments/five_band_train/task_specific/background4_v3/
+!train/experiments/five_band_train/task_specific/background4_v3/**
+!train/experiments/five_band_train/task_specific/background4_v3_agingfix_v1/
+!train/experiments/five_band_train/task_specific/background4_v3_agingfix_v1/**
+!train/experiments/five_band_train/task_specific/retune_9_scene3647_agingmix_4849_v1/
+!train/experiments/five_band_train/task_specific/retune_9_scene3647_agingmix_4849_v1/**
+!train/experiments/five_band_train/task_specific/retune_9_scene3647_pollutionshape_v2/
+!train/experiments/five_band_train/task_specific/retune_9_scene3647_pollutionshape_v2/**
+!train/experiments/five_band_train/task_specific/retune_9_scene3647_v10_balanced_softcomp_4849_pollution4447_v1/
+!train/experiments/five_band_train/task_specific/retune_9_scene3647_v10_balanced_softcomp_4849_pollution4447_v1/**
+
+ui/analysis_workbench/generated_overlays/
+ui/analysis_workbench/workflow_state.json
+ui/analysis_workbench/workbench_manifest.js
+ui/analysis_workbench/workbench_manifest.json
+
+# ---------------------------------------------------------------------------
+# Packaging, reports, hardware archives and scratch files
+# ---------------------------------------------------------------------------
+outputs/
+tmp/
+ppt/
+experiment_figures/
+*.zip
+*.7z
+*.rar
+*.pptx
+
+# Logs outside the six explicitly retained model directories
+*.log

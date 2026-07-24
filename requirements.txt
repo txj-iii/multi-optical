@@ -1,0 +1,13 @@
+# Tested Windows training environment (pipe2, Python 3.11).
+# Install the CUDA-compatible PyTorch build separately when GPU training is
+# required, then install the remaining packages from this file.
+torch==2.0.1
+torchvision==0.15.2
+segmentation-models-pytorch==0.5.0
+numpy==1.24.4
+Pillow==11.3.0
+scipy==1.10.0
+matplotlib==3.10.3
+spectral==0.24
+pytest==9.1.0
+

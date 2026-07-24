@@ -1,0 +1,100 @@
+model_variant=baseline
+loss_weighting=equal
+dwa_temperature=2.0
+patch_root=D:\multi-optical\train\five_band_patches\background4_v1\train
+sample_count=2346
+mode=five_band_patch_train
+in_channels=19
+required_positive_heads=
+include_empty_scene_ids=SAMPLE_036,SAMPLE_037,SAMPLE_038,SAMPLE_039,SAMPLE_063,SAMPLE_065,SAMPLE_090,SAMPLE_091,SAMPLE_092,SAMPLE_093
+sampling_strategy=balanced
+competition_weight=0.5
+paint_positive_weight=1.0
+pollution_positive_weight=3.0
+aging_positive_weight=1.0
+overlap_penalty_weight=0.25
+spectral_loss_weight=0.05
+disease_spectral_weight=0.1
+aging_exclusivity_weight=0.5
+use_spectral_se=True
+device=cuda
+python_executable=C:\Users\Embar\.conda\envs\pipe2\python.exe
+resume_checkpoint_path=D:\multi-optical\train\experiments\five_band_train\task_specific\background4_v3\background4_v3.pt
+sample_record_path=D:\multi-optical\readme\样本记录规范.md
+pigment_class_names=朱砂,代赭,石青,石绿
+pigment_loss_weight=0.5
+epoch=1 loss=0.419027
+epoch=1 paint_loss=0.510483
+epoch=1 pollution_loss=0.442589
+epoch=1 aging_loss=0.421395
+epoch=1 pigment_loss=0.231899
+epoch=1 paint_pollution_competition_loss=0.031641
+epoch=1 paint_pollution_overlap_loss=0.002021
+epoch=1 spectral_guidance_loss=0.079153
+epoch=1 aging_paint_edge_loss=0.000000
+epoch=1 disease_spectral_prior_loss=0.125903
+epoch=1 aging_exclusivity_loss=0.027098
+epoch=1 paint_weight=1.000000
+epoch=1 pollution_weight=1.000000
+epoch=1 aging_weight=1.000000
+epoch=1 pigment_weight=0.500000
+epoch=2 loss=0.415892
+epoch=2 paint_loss=0.506711
+epoch=2 pollution_loss=0.438929
+epoch=2 aging_loss=0.427131
+epoch=2 pigment_loss=0.255224
+epoch=2 paint_pollution_competition_loss=0.031178
+epoch=2 paint_pollution_overlap_loss=0.001905
+epoch=2 spectral_guidance_loss=0.077019
+epoch=2 aging_paint_edge_loss=0.000000
+epoch=2 disease_spectral_prior_loss=0.119241
+epoch=2 aging_exclusivity_loss=0.017912
+epoch=2 paint_weight=1.000000
+epoch=2 pollution_weight=1.000000
+epoch=2 aging_weight=1.000000
+epoch=2 pigment_weight=0.500000
+epoch=3 loss=0.407011
+epoch=3 paint_loss=0.501171
+epoch=3 pollution_loss=0.436890
+epoch=3 aging_loss=0.422289
+epoch=3 pigment_loss=0.214252
+epoch=3 paint_pollution_competition_loss=0.030256
+epoch=3 paint_pollution_overlap_loss=0.001754
+epoch=3 spectral_guidance_loss=0.074815
+epoch=3 aging_paint_edge_loss=0.000000
+epoch=3 disease_spectral_prior_loss=0.121493
+epoch=3 aging_exclusivity_loss=0.017372
+epoch=3 paint_weight=1.000000
+epoch=3 pollution_weight=1.000000
+epoch=3 aging_weight=1.000000
+epoch=3 pigment_weight=0.500000
+epoch=4 loss=0.408818
+epoch=4 paint_loss=0.501268
+epoch=4 pollution_loss=0.439252
+epoch=4 aging_loss=0.423026
+epoch=4 pigment_loss=0.230016
+epoch=4 paint_pollution_competition_loss=0.032181
+epoch=4 paint_pollution_overlap_loss=0.001688
+epoch=4 spectral_guidance_loss=0.074940
+epoch=4 aging_paint_edge_loss=0.000000
+epoch=4 disease_spectral_prior_loss=0.122137
+epoch=4 aging_exclusivity_loss=0.013412
+epoch=4 paint_weight=1.000000
+epoch=4 pollution_weight=1.000000
+epoch=4 aging_weight=1.000000
+epoch=4 pigment_weight=0.500000
+epoch=5 loss=0.402133
+epoch=5 paint_loss=0.498358
+epoch=5 pollution_loss=0.436861
+epoch=5 aging_loss=0.420121
+epoch=5 pigment_loss=0.216180
+epoch=5 paint_pollution_competition_loss=0.026620
+epoch=5 paint_pollution_overlap_loss=0.001512
+epoch=5 spectral_guidance_loss=0.075392
+epoch=5 aging_paint_edge_loss=0.000000
+epoch=5 disease_spectral_prior_loss=0.114734
+epoch=5 aging_exclusivity_loss=0.014687
+epoch=5 paint_weight=1.000000
+epoch=5 pollution_weight=1.000000
+epoch=5 aging_weight=1.000000
+epoch=5 pigment_weight=0.500000

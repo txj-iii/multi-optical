@@ -1,0 +1,20 @@
+{
+  "version_id": "background4_v1",
+  "protected": {
+    "softcomp_checkpoint": {
+      "exists": true,
+      "files": 2,
+      "sha256": "e52c59352b43c6b913a9b1fb4dc2397cf9320f77b33f649ef32c12659b66f838"
+    },
+    "softcomp_predictions": {
+      "exists": true,
+      "files": 285,
+      "sha256": "4a876a7419f9acbd72da84c2a03487ee2770a05654bf011a012b20b3b3c1c50a"
+    },
+    "softcomp_patches": {
+      "exists": true,
+      "files": 1057,
+      "sha256": "c98ee28670163bde93cdddcfcf70d8bdfb36638a4537d94373f04628760d76fe"
+    }
+  }
+}
